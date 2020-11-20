@@ -26,6 +26,21 @@ if(isset($_POST["nom"])){
         return $array;
     }
 
+    if(isset($_FILES['avatar']))
+{ 
+     $dossier = '../../img/';
+     $fichier = basename($_FILES['avatar']['name']);
+     if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) 
+     //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+     {
+          echo 'Upload effectué avec succès !';
+     }
+     else //Sinon (la fonction renvoie FALSE).
+     {
+          echo 'Echec de l\'upload !';
+     }
+}
+
 /*
 if(isset($_POST['nom'])){
     $plat=new Plats();
@@ -97,19 +112,18 @@ if(isset($_POST["nom"] )){
 ?>
 <div class="container">
     <h4>Ajouter un plat</h4>
-    <form class="form" action="ajout_plat.php" method="post">
+    <form class="form" action="ajout_plat.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="">Nom</label>
             <input type="text" name="nom" id="nom" class="form-control" placeholder="">
             <label for="">Description</label>
             <input type="text" name="detail" id="detail" class="form-control" placeholder="">
-            <label for="">Photo</label>
-            <input type="text" name="photo" id="photo" class="form-control" placeholder="">
             <label for="">Prix</label>
             <input type="number" name="prix" id="prix" class="form-control" placeholder="">
             <input type="hidden" name="size" value="1000000">
+            <label for="">Photo</label>
             <div>
-                <input type="file" name="image">
+                <input type="file" name="photo">
             </div>
             <button type="submit" class="btn btn-primary mt-3" action="">Ajouter</button>
         </div>
