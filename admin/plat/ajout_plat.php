@@ -97,8 +97,8 @@ if(isset($_POST["nom"] )){
 ?>
 <div class="container">
     <h4>Ajouter un plat</h4>
-        <form class="form" action="ajout_plat.php" method="post">
-            <div class="form-group">
+    <form class="form" action="ajout_plat.php" method="post">
+        <div class="form-group">
             <label for="">Nom</label>
             <input type="text" name="nom" id="nom" class="form-control" placeholder="">
             <label for="">Description</label>
@@ -107,8 +107,12 @@ if(isset($_POST["nom"] )){
             <input type="text" name="photo" id="photo" class="form-control" placeholder="">
             <label for="">Prix</label>
             <input type="number" name="prix" id="prix" class="form-control" placeholder="">
-            <button type="submit" class="btn btn-primary mt-3" action="">Ajouter</button>
+            <input type="hidden" name="size" value="1000000">
+            <div>
+                <input type="file" name="image">
             </div>
-        </form>
-    </div>
+            <button type="submit" class="btn btn-primary mt-3" action="">Ajouter</button>
+        </div>
+    </form>
+</div>
 <?php include_once("../footer.php");?>
