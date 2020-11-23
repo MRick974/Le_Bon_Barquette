@@ -1,3 +1,4 @@
+
 <head>
     <title>Accueil</title>
     <!-- Required meta tags -->
@@ -21,13 +22,15 @@
         <a href="<?php echo $ROOT?>../"><h3>Le Bon Barquette</h3></a>
         </div>
         <div class="right_area">
-            <a href="" class="logout_btn">Déconnexion</a>
+            <a href="<?php echo $ROOT?>logout.php" class="logout_btn">Déconnexion</a>
         </div>
     </header>
+
     <div class="sidebar toggled">
         <h4>Admin</h4>
         <a href="<?php echo $ROOT?>"><i class="fa fa-tachometer-alt"></i><span>Dashboard</span></a>
         <a href="<?php echo $ROOT?>plat/"><i class="fa fa-columns"></i><span>Liste des repas</span></a>
         <a href="<?php echo $ROOT?>plat/ajout_plat.php"><i class="fa fa-plus"></i><span>Ajouter un repas</span></a>
     </div>
+
     <div class="container content">

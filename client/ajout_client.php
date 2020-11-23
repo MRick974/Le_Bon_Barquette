@@ -4,6 +4,7 @@
     $db =new PDO("mysql:host=127.0.0.1;dbname=lebonbarquette","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
 
     if(isset($_POST["nom"])){
+
         $client=new Client();
         $client->setId(NULL);
         $client->setNom($_POST["nom"]);
@@ -13,6 +14,7 @@
         $requete=$db->prepare("INSERT INTO client (id,nom,prenom,email,mdp) values (:id,:nom,:prenom,:email,:mdp)");
         $requete->execute(dismount($client));
         header('Location: ./');
+
     }
     
     function dismount($object) {
@@ -28,6 +30,7 @@
     $ROOTCSS_JS = '../';
     $ROOT = '../';
     include_once("./header.php");
+
 ?>
 
 <div class="container">
@@ -41,10 +44,12 @@
             <input type="text" name="prenom" id="prenom" class="form-control" placeholder="">
             
             <label for="">Email</label>
+
             <input type="text" name="email" id="email" class="form-control" placeholder="">
              
             <label for="">Mot de Passe :</label>
             <input type="password" name="mdp" id="mdp" name="size">
+
 
             <button type="submit" class="btn btn-primary mt-3" action="ajout_client.php">S'inscrire</button>
         </div>
