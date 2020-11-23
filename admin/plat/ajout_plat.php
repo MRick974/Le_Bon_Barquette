@@ -15,7 +15,7 @@ if(isset($_POST["nom"])){
     header('Location: ./');
     }
     //var_dump($utilisateur2);
-    
+
     function dismount($object) {
         $reflectionClass = new ReflectionClass(get_class($object));
         $array = array();
@@ -113,7 +113,7 @@ if(isset($_POST["nom"] )){
             <label for="">Description</label>
             <input type="text" name="detail" id="detail" class="form-control" placeholder="">
             <label for="">Prix</label>
-            <input type="number" name="prix" id="prix" class="form-control" placeholder="">
+            <input type="float" name="prix" id="prix" class="form-control" placeholder="">
             <input type="hidden" name="size" value="1000000">
             <label for="">Photo</label>
             <div>

@@ -10,7 +10,9 @@ $requete->execute();
 $requete->setFetchMode(PDO::FETCH_CLASS,'Plats');
 
 $plats = $requete->fetchAll();
+
 include_once("../header.php");
+
 ?>
 <div class="liste-plats">
     <h1>Liste des plats</h1>
@@ -34,8 +36,8 @@ include_once("../header.php");
                             <a href="details.php ? id=<?php echo $plat->getId();?>" class="btn btn-primary">
                                 <i class="fa fa-eye"></i>
                             </a>
-                            <a href="" class="btn btn-warning text-light">
-                                <i class="fa fa-edit"></i>
+                            <a href="supprime_plat.php ? id=<?php echo $plat->getId();?>" class="btn btn-danger text-light">
+                                <i class="fa fa-trash-alt"></i>
                             </a>
                         </td>
                     </tr>
