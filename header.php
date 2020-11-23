@@ -38,7 +38,7 @@
                         <a class="nav-link" href="<?php echo $ROOT?>admin/connexion.php">Administration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $ROOT?>client/">Inscription/Connexion</a>
+                        <a class="nav-link" href="<?php echo $ROOT?>client/index.php">Inscription/Connexion</a>
                     </li>
                 </ul>
             </div>

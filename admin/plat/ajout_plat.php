@@ -119,7 +119,7 @@ if(isset($_POST["nom"] )){
             <div>
                 <input type="file" name="photo" id="photo">
             </div> 
-            <button type="submit" class="btn btn-primary mt-3" action="">Ajouter</button>
+            <button type="submit" class="btn btn-primary mt-3" action="ajout_plat.php">Ajouter</button>
         </div>
     </form>
 </div>
