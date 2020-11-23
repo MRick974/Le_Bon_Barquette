@@ -2,12 +2,13 @@
 include_once("../../classes/Plats.php");
 $db =new PDO("mysql:host=127.0.0.1;dbname=lebonbarquette","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
 
+$fichier;
 if(isset($_POST["nom"])){
     $plat=new Plats();
     $plat->setId(NULL);
     $plat->setNom($_POST["nom"]);
     $plat->setDetail($_POST["detail"]);
-    $plat->setPhoto($_POST["photo"]);
+    $plat->setPhoto("img/".$_FILES["photo"]['name']);
     $plat->setPrix($_POST["prix"]);
     $requete=$db->prepare("INSERT INTO plats (id,nom,detail,photo,prix) values (:id,:nom,:detail,:photo,:prix)");
     $requete->execute(dismount($plat));
@@ -26,19 +27,12 @@ if(isset($_POST["nom"])){
         return $array;
     }
 
-    if(isset($_FILES['avatar']))
+    if(isset($_FILES['photo']))
 { 
      $dossier = '../../img/';
-     $fichier = basename($_FILES['avatar']['name']);
-     if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) 
-     //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
-     {
-          echo 'Upload effectué avec succès !';
-     }
-     else //Sinon (la fonction renvoie FALSE).
-     {
-          echo 'Echec de l\'upload !';
-     }
+     $fichier = basename($_FILES['photo']['name']);
+     move_uploaded_file($_FILES['photo']['tmp_name'], $dossier . $fichier);
+
 }
 
 /*
@@ -123,8 +117,8 @@ if(isset($_POST["nom"] )){
             <input type="hidden" name="size" value="1000000">
             <label for="">Photo</label>
             <div>
-                <input type="file" name="photo">
-            </div>
+                <input type="file" name="photo" id="photo">
+            </div> 
             <button type="submit" class="btn btn-primary mt-3" action="">Ajouter</button>
         </div>
     </form>
