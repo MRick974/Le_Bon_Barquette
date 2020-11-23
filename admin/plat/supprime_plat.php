@@ -15,11 +15,5 @@ header('Location: index.php');
 }
 
 
-//$requete->setFetchMode(PDO::FETCH_ASSOC);
-
-//$resultat=$requete->fetchAll();
-//var_dump($resultat);
-
-
 
 ?>
