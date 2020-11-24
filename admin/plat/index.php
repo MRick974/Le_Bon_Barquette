@@ -11,7 +11,7 @@ $requete->setFetchMode(PDO::FETCH_CLASS,'Plats');
 
 $plats = $requete->fetchAll();
 
-include_once("../header.php");
+include_once("../headeradmin.php");
 
 ?>
 <div class="liste-plats">

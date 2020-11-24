@@ -8,7 +8,7 @@ if(isset($_POST["nom"])){
     $plat->setId(NULL);
     $plat->setNom($_POST["nom"]);
     $plat->setDetail($_POST["detail"]);
-    $plat->setPhoto("img/".$_FILES["photo"]['name']);
+    $plat->setPhoto($_FILES["photo"]['name']);
     $plat->setPrix($_POST["prix"]);
     $requete=$db->prepare("INSERT INTO plats (id,nom,detail,photo,prix) values (:id,:nom,:detail,:photo,:prix)");
     $requete->execute(dismount($plat));
@@ -102,7 +102,7 @@ if(isset($_POST["nom"] )){
 
     $ROOTCSS_JS = '../../';
     $ROOT = '../';
-    include_once("../header.php");
+    include_once("../headeradmin.php");
 ?>
 <div class="container">
     <h4>Ajouter un plat</h4>
