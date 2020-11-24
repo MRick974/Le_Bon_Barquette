@@ -1,3 +1,4 @@
+
 <head>
     <title>Accueil</title>
     <!-- Required meta tags -->
@@ -21,7 +22,7 @@
         <a href="<?php echo $ROOT?>"><h3>Le Bon Barquette</h3></a>
         </div>
         <div class="right_area">
-            <a href="<?php echo $ROOT?>/admin/logout.php" class="logout_btn">Déconnexion</a>
+            <a href="<?php echo $ROOT?>admin/logout.php" class="logout_btn">Déconnexion</a>
         </div>
     </header>
 
@@ -30,7 +31,7 @@
         <a href="<?php echo $ROOT?>"><i class="fa fa-home"></i><span>Accueil</span></a>
         <!--<a href="<?php echo $ROOT?>plat/"><i class="fa fa-drumstick-bite"></i><span>Repas</span></a>-->
         <a href="<?php echo $ROOT?>"><i class="fa fa-phone"></i><span>Contact</span></a>
-        <a href="index.php"><i class="fa fa-user-shield"></i><span>Administration</span></a>
+        <a href="<?php echo $ROOT?>"><i class="fa fa-user-shield"></i><span>Administration</span></a>
     </div>
 
     <div class="container content">

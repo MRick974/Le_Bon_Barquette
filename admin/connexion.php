@@ -1,7 +1,7 @@
 <?php
 
 $ROOTCSS_JS = '../';
-$ROOT = '../';
+$ROOT = './';
 include_once("./header.php");
 //include_once("././User.php");
 
@@ -18,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = htmlspecialchars($_POST['nom']);
     $password = htmlspecialchars($_POST['password']);
 
-
+//var_dump(password_hash('lol9774',PASSWORD_ARGON2ID));
+//die();
     if (!empty($nom) and !empty($password)) {
         $requser = $bdd->prepare("SELECT * FROM user WHERE nom = ? ");
         $requser->execute(array($nom));
