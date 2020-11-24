@@ -28,7 +28,7 @@
     
     <div class="sidebar toggled">
         <h4>Admin</h4>
-        <a href="<?php echo $ROOT?>"><i class="fa fa-tachometer-alt"></i><span>Dashboard</span></a>
+        <a href="<?php echo $ROOT?>admin/"><i class="fa fa-tachometer-alt"></i><span>Dashboard</span></a>
         <a href="<?php echo $ROOT?>plat/"><i class="fa fa-columns"></i><span>Liste des repas</span></a>
         <a href="<?php echo $ROOT?>plat/ajout_plat.php"><i class="fa fa-plus"></i><span>Ajouter un repas</span></a>
     </div>
