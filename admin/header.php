@@ -18,7 +18,7 @@
             <span><i class="fa fa-bars"></i></span>
         </div>
         <div class="left_area">
-        <a href="<?php echo $ROOT?>../"><h3>Le Bon Barquette</h3></a>
+        <a href="<?php echo $ROOT?>"><h3>Le Bon Barquette</h3></a>
         </div>
         <div class="right_area">
             <a href="<?php echo $ROOT?>/admin/logout.php" class="logout_btn">Déconnexion</a>

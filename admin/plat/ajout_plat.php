@@ -101,7 +101,7 @@ if(isset($_POST["nom"] )){
     */
 
     $ROOTCSS_JS = '../../';
-    $ROOT = '../';
+    $ROOT = '../../';
     include_once("../headeradmin.php");
 ?>
 <div class="container">

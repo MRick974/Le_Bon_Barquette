@@ -1,7 +1,7 @@
 <?php
 
 $ROOTCSS_JS = '../';
-$ROOT = './';
+$ROOT = '../';
 include_once("./header.php");
 //include_once("././User.php");
 

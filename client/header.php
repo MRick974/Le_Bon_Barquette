@@ -18,7 +18,7 @@
             <span><i class="fa fa-bars"></i></span>
         </div>
         <div class="left_area">
-        <a href="<?php echo $ROOT?>../"><h3>Le Bon Barquette</h3></a>
+        <a href="<?php echo $ROOT?>"><h3>Le Bon Barquette</h3></a>
         </div>
         <div class="left_area">
         <a href="<?php echo $ROOT?>./"><h3>Formulaire d'inscription / Connexion</h3></a>
