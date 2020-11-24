@@ -19,9 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     if (!empty($nom) and !empty($password)) {
-        $requser = $bdd->prepare("SELECT * FROM user WHERE nom = ? ");
+        $requser = $bdd->prepare("SELECT * FROM user ");
         $requser->execute(array($nom));
-        $user = $requser->fetch();
+        $user = $requser->fetchAll();
+        var_dump($user);
+        die();
         $hash = $user['password'];
         if (password_verify($password, $hash)) {
             $_SESSION['id'] = $user['id'];
