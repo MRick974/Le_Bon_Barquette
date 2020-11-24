@@ -3,6 +3,7 @@
 $ROOTCSS_JS = '../';
 $ROOT = './';
 include_once("./header.php");
+//include_once("././User.php");
 
 ?>
 <?php
@@ -28,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (password_verify($password, $hash)) {
             $_SESSION['id'] = $user['id'];
             $_SESSION['nom'] = $user['nom'];
+            $_SESSION['roles'] = $user['roles'];
             header("Location: index.php");
         } else {
             header("Location: connexion.php");
