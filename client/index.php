@@ -20,8 +20,8 @@ $ROOTCSS_JS = '../';
         
     </head>
     <body>
-        <a href="ajout_client.php"><input type="button" name="coclient" id="coclient" class="btn btn-primary" btn-lg btn-block value="Inscription"><a>
-        <button type="button" name="inclient" id="inclient" class="btn btn-primary" btn-lg btn-block> Connexion </button>
+        <a href="../client/ajout_client.php"><input type="button" name="coclient" id="coclient" class="btn btn-primary" btn-lg btn-block value="Inscription"></a>
+        <a href="../admin/connexion.php"><button type="button" name="inclient" id="inclient" class="btn btn-primary" btn-lg btn-block> Connexion </button></a>
     </body>
 
 </html>

@@ -1,7 +1,8 @@
 <?php
 
-    include_once("../classes/Client.php");
-    $db =new PDO("mysql:host=127.0.0.1;dbname=lebonbarquette","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
+    include("../classes/Client.php");
+    $db =new PDO("mysql:host=127.0.0.1:3306;dbname=lebonbarquette","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if(isset($_POST["nom"])){
 
@@ -11,12 +12,14 @@
         $client->setPrenom($_POST["prenom"]);
         $client->setEmail($_POST["email"]);
         $client->setPassword($_POST["mdp"]);
-        $requete=$db->prepare("INSERT INTO client (id,nom,prenom,email,mdp) values (:id,:nom,:prenom,:email,:mdp)");
+        
+        $requete=$db->prepare("INSERT INTO client (id,nom,prenom,email,password) 
+                                values (:id,:nom,:prenom,:email,:password)");
         $requete->execute(dismount($client));
-        header('Location: ./');
-
+        header('Location:./');
     }
     
+    //Permet de réfléter la base de données
     function dismount($object) {
         $reflectionClass = new ReflectionClass(get_class($object));
         $array = array();
@@ -35,7 +38,7 @@
 
 <div class="container">
     <h4>Inscription</h4>
-    <form class="form" action="ajout_plat.php" method="post" enctype="multipart/form-data">
+    <form class="form" action="ajout_client.php" method="post">
         <div class="form-group">
             <label for="">Nom</label>
             <input type="text" name="nom" id="nom" class="form-control" placeholder="">
@@ -45,11 +48,10 @@
             
             <label for="">Email</label>
 
-            <input type="text" name="email" id="email" class="form-control" placeholder="">
+            <input type="email" name="email" id="email" class="form-control" placeholder=""></br>
              
             <label for="">Mot de Passe :</label>
-            <input type="password" name="mdp" id="mdp" name="size">
-
+            <input type="password" name="mdp" id="mdp"></br>
 
             <button type="submit" class="btn btn-primary mt-3" action="ajout_client.php">S'inscrire</button>
         </div>
