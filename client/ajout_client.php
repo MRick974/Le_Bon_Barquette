@@ -1,20 +1,21 @@
 <?php
 
-    include("../classes/Client.php");
+    include("../classes/User.php");
     $db =new PDO("mysql:host=127.0.0.1:3306;dbname=lebonbarquette","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    //var_dump(password_hash('lol9774',PASSWORD_ARGON2ID)); et on récupere le mot de passe crypter.
+    /*die();*/
     if(isset($_POST["nom"])){
 
-        $client=new Client();
+        $client=new User();
         $client->setId(NULL);
         $client->setNom($_POST["nom"]);
-        $client->setPrenom($_POST["prenom"]);
-        $client->setEmail($_POST["email"]);
-        $client->setPassword($_POST["mdp"]);
+        $client->setPassword($_POST["password"]);
+        $client->setRoles("ROLE_USER");
         
-        $requete=$db->prepare("INSERT INTO client (id,nom,prenom,email,password) 
-                                values (:id,:nom,:prenom,:email,:password)");
+        $requete=$db->prepare("INSERT INTO user (id,nom,password,roles) 
+                                values (:id,:nom,:password,:roles)");
         $requete->execute(dismount($client));
         header('Location:./');
     }
@@ -42,18 +43,11 @@
         <div class="form-group">
             <label for="">Nom</label>
             <input type="text" name="nom" id="nom" class="form-control" placeholder="">
-            
-            <label for="">Prenom</label>
-            <input type="text" name="prenom" id="prenom" class="form-control" placeholder="">
-            
-            <label for="">Email</label>
-
-            <input type="email" name="email" id="email" class="form-control" placeholder=""></br>
              
             <label for="">Mot de Passe :</label>
-            <input type="password" name="mdp" id="mdp"></br>
+            <input type="password" name="password" id="password"></br>
 
-            <button type="submit" class="btn btn-primary mt-3" action="ajout_client.php">S'inscrire</button>
+            <button type="submit" class="btn btn-primary mt-3">S'inscrire</button>
         </div>
     </form>
 </div>
