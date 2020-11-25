@@ -42,7 +42,7 @@
     <form class="form" action="ajout_client.php" method="post">
         <div class="form-group">
             <label for="">Nom</label>
-            <input type="text" name="nom" id="nom" class="form-control" placeholder="">
+            <input type="text" name="nom" id="nom" class="form-control" placeholder=""></br>
              
             <label for="">Mot de Passe :</label>
             <input type="password" name="password" id="password"></br>
