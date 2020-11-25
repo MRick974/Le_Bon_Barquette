@@ -15,7 +15,7 @@
         $client->setRoles("ROLE_USER");
         
         $requete=$db->prepare("INSERT INTO user (id,nom,password,roles) 
-                                values (:id,:nom,:password,:roles)");
+        values (:id,:nom,:password,:roles)");
         $requete->execute(dismount($client));
         header('Location:./');
     }
