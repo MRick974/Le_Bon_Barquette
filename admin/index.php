@@ -3,14 +3,16 @@
 $ROOTCSS_JS = '../';
 $ROOT = '../';
 include_once("./headeradmin.php");
-
-
-
+include_once($ROOT."classes/User.php");
+$user = $_SESSION['user'];
 ?>
 <?php
 session_start();
-if (!isset($_SESSION['id'])) {
-    header('Location: connexion.php');
+//var_dump($_SESSION);
+if ($user->getRoles()==='ROLE_USER') {
+    //header('Location: ../index.php');
+    var_dump($user);
+    die();
 }
 
 $bdd = new PDO('mysql:host=127.0.0.1;dbname=lebonbarquette', 'root', '');

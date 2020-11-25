@@ -3,7 +3,7 @@
 $ROOTCSS_JS = '../';
 $ROOT = '../';
 include_once("./header.php");
-//include_once("././User.php");
+include_once($ROOT."classes/User.php");
 
 ?>
 <?php
@@ -14,7 +14,43 @@ if(isset($_SESSION['id'])){
 
 $bdd = new PDO('mysql:host=127.0.0.1;dbname=lebonbarquette', 'root', '');
 
+/*$nom =htmlspecialchars($_POST['nom']);
+$password = htmlspecialchars($_POST['password']);
+$query = "SELECT * FROM user WHERE nom =:nom";
+$requete = $bdd->prepare(':nom', $nom);
+$requete->execute();
+$requete->setFetchMode(PDO::FETCH_CLASS, User::class);
+$result = $requete->fetch();*/
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nom =htmlspecialchars($_POST['nom']);
+    $password = htmlspecialchars($_POST['password']);   
+    
+    if (!empty($nom) and !empty($password)) {
+    $requser = $bdd->prepare("SELECT * FROM user WHERE nom = :nom");
+    $requser->bindParam(":nom",$nom);
+    $requser->setFetchMode(PDO::FETCH_CLASS, 'User');
+    $requser->execute();
+    $user = $requser->fetch();
+    $hash = $user->getPassword();
+    
+    if (password_verify($password, $hash)) {
+        $_SESSION['user'] = $user;
+        if($_SESSION['roles']=='ROLE_ADMIN'){
+            header("Location: index.php");
+        }else{
+            header("Location: $ROOT./index.php");
+        }
+
+    } else {
+        //header("Location: connexion.php");
+        $erreur = "Mauvais nom ou mot de passe !";
+    }
+} else {
+    $erreur = "Tous les champs doivent être complétés !";
+}
+}
+
+/*if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = htmlspecialchars($_POST['nom']);
     $password = htmlspecialchars($_POST['password']);
 
@@ -42,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         $erreur = "Tous les champs doivent être complétés !";
     }
-}
+}*/
 ?>
 
 <form class="form" action="" method="post" enctype="multipart/form-data">
