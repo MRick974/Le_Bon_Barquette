@@ -4,12 +4,11 @@
     $db =new PDO("mysql:host=127.0.0.1:3306;dbname=lebonbarquette","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $mdp = $_POST["password"];
-    $mdpcrypt = password_hash($mdp,PASSWORD_ARGON2ID); // et on récupere le mot de passe crypter.
-    /*die();*/
     if(isset($_POST["nom"])){
 
         $client=new User();
+        $mdp = $_POST['password'];
+        $mdpcrypt = password_hash($mdp,PASSWORD_ARGON2ID); // et on récupere le mot de passe crypter.
         $client->setId(NULL);
         $client->setNom($_POST["nom"]);
         $client->setPassword($mdpcrypt);
