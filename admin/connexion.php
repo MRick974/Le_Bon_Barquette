@@ -1,7 +1,7 @@
 <?php
 
 $ROOTCSS_JS = '../';
-$ROOT = './';
+$ROOT = '../';
 include_once("./header.php");
 //include_once("././User.php");
 
@@ -29,7 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['id'] = $user['id'];
             $_SESSION['nom'] = $user['nom'];
             $_SESSION['roles'] = $user['roles'];
-            header("Location: index.php");
+            if($_SESSION['roles']=='ROLE_ADMIN'){
+                header("Location: index.php");
+            }else{
+                header("Location: $ROOT");
+            }
+
         } else {
             header("Location: connexion.php");
             $erreur = "Mauvais mail ou mot de passe !";
