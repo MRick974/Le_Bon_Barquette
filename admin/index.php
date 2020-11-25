@@ -2,9 +2,7 @@
 
 $ROOTCSS_JS = '../';
 $ROOT = '../';
-include_once("./headeradmin.php");
-
-
+include_once("../admin/headeradmin.php");
 
 ?>
 <?php
