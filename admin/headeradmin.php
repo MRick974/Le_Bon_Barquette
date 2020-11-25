@@ -1,3 +1,14 @@
+<?php
+include_once($ROOT."classes/User.php");
+session_start();
+$user = $_SESSION['user'];
+
+
+//var_dump($_SESSION);
+if ($user->getRoles()==='ROLE_USER') {
+    header('Location: ../index.php');
+}
+?>
 <head>
     <title>Accueil</title>
     <!-- Required meta tags -->
