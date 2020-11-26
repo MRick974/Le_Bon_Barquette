@@ -38,6 +38,18 @@ $ROOTCSS_JS = './';
 </div>
 <div class="container content">
 
+<div class="container" id="coordonnees">
+    <fieldset>
+      <legend><strong>------------Nos coordonnées------------</strong></legend>
+      Administrateur : Bob POPOVICH<br>
+      GSM : 0692 12 34 56<br>
+      Fix Le Bon Barquette : 0692 12 34 56<br>
+      Email : administrateur@lebonbarquette.re<br>
+    </fieldset>
+</div>
+<div class="container" style="font-weight:600;text-align:center;">
+ <span></span><p> <strong>NB :</strong> la commande de repas s'effectue uniquement sur le site et par GSM,</br> l'adresse email est didié pour les soucis que vous rencontrerez sur votre compte.</p>
+</div>
 <?php
 
 include('client/footer.php');

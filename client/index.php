@@ -10,9 +10,6 @@ $ROOTCSS_JS = '../';
             <a href="../client/ajout_client.php"><input type="button" name="coclient" id="coclient" class="btn btn-primary" btn-lg btn-block value="Inscription"></a>
             <a href="../admin/connexion.php"><button type="button" name="inclient" id="inclient" class="btn btn-primary" btn-lg btn-block> Connexion </button></a>
         </div>
-    </body>
-
-</html>
 
 <?php
     include_once('../client/footer.php');

@@ -30,7 +30,7 @@
         <h4>Menu</h4>
         <a href="<?php echo $ROOT?>"><i class="fa fa-home"></i><span>Accueil</span></a>
         <!--<a href="<?php echo $ROOT?>plat/"><i class="fa fa-drumstick-bite"></i><span>Repas</span></a>-->
-        <a href="<?php echo $ROOT?>"><i class="fa fa-phone"></i><span>Contact</span></a>
+        <a href="<?php echo $ROOT?>contact.php"><i class="fa fa-phone"></i><span>Contact</span></a>
         <a href="<?php echo $ROOT?>"><i class="fa fa-user-shield"></i><span>Administration</span></a>
     </div>
 

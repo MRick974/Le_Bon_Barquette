@@ -106,3 +106,13 @@ header{
 .content{
   padding-top: 90px;
 }
+
+#coordonnees {
+  background-color: #ffe293;
+  font-size: 20px;
+  font-weight: 500;
+  border: 5px solid grey;
+  border-radius: 15px;
+  width: 550px;
+  text-align:center;
+}
