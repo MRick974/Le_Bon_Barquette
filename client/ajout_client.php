@@ -15,7 +15,7 @@
         $client->setRoles("ROLE_USER");
         
         $requete=$db->prepare("INSERT INTO user (id,nom,password,roles) 
-                                values (:id,:nom,:password,:roles)");
+        values (:id,:nom,:password,:roles)");
         $requete->execute(dismount($client));
         header('Location:./');
     }
@@ -42,7 +42,7 @@
     <form class="form" action="ajout_client.php" method="post">
         <div class="form-group">
             <label for="">Nom</label>
-            <input type="text" name="nom" id="nom" class="form-control" placeholder="">
+            <input type="text" name="nom" id="nom" class="form-control" placeholder=""></br>
              
             <label for="">Mot de Passe :</label>
             <input type="password" name="password" id="password"></br>

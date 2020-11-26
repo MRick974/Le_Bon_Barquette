@@ -33,7 +33,7 @@ $repas=$requete->fetchAll();
 </section>
 <section class="section-repas">
     <div class="container">
-        <h1 class="text-center">Repas du jour</h1>
+        <h1 class="text-center" id="repas">Repas du jour</h1>
         <div class="d-flex justify-content-center">
             <div class="divider"></div>
         </div>

@@ -1,4 +1,6 @@
 <?php
+
+
 include_once($ROOT."classes/User.php");
 session_start();
 $user = $_SESSION['user'];
