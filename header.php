@@ -32,7 +32,7 @@
                         <a class="nav-link" href="#repas">Repas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $ROOT?>">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $ROOT?>admin/index.php">Administration</a>
