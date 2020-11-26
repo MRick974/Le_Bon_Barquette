@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="container">
             <!-- Brand -->
-            <a class="navbar-brand" href="#"><img src="<?php echo $ROOT?>img/logo.png" id="navbar-logo" width="100" alt="logo"></a>
+            <a class="navbar-brand" href="<?php echo $ROOT?>index.php"><img src="<?php echo $ROOT?>img/logo.png" id="navbar-logo" width="100" alt="logo"></a>
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span>Menu</span>
@@ -29,7 +29,7 @@
                         <a class="nav-link" href="#repas">Repas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $ROOT?>">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $ROOT?>admin/index.php">Admin</a>
