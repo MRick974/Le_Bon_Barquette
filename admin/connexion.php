@@ -50,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 }
 
+
 /*if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = htmlspecialchars($_POST['nom']);
     $password = htmlspecialchars($_POST['password']);
@@ -100,7 +101,7 @@ body{
 .page{
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 55%;
     transform: translate(-50%, -50%);
     background-color: beige;
     border-radius: 20px;
@@ -189,7 +190,7 @@ button{
         <div class="form">
 
             <input type="text" name="nom" id="nom" placeholder="Nom">
-            <input type="password" name="password" id="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Mot de passe">
             
             <button type="submit">Se connecter <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
@@ -219,4 +220,5 @@ if (isset($erreur)) {
 ?>
 <?php
 include_once('./footer.php');
+
 ?>
