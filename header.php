@@ -35,7 +35,7 @@
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $ROOT?>admin/index.php">Administration</a>
+                        <a class="nav-link" href="<?php echo $ROOT?>admin/index.php">Admin</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $ROOT?>client/index.php">Inscription/Connexion</a>

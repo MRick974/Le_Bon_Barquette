@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
             </div>
             <div class="col-md-6">
                 <div class="container">
-                    <h4>Ajouter un plat</h4>
+                    <h4>Modifier un plat</h4>
                     <form class="form" action="" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Nom</label>

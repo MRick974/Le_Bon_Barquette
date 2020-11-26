@@ -57,9 +57,12 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
                             <input type="password" name="password" id="password" class="form-control"  placeholder="">
                             <button type="submit" class="btn btn-primary mt-3" >Modifier</button>
                         </div>
+<<<<<<< HEAD
                         <div style="background-color:red;color:white;padding:2px;margin:10px;margin-right:50%;" >
                             <p class="fas fa-exclamation-triangle"> Lorsque vous cliquerez sur <strong>MODIFIER</strong> l'action sera irréversible !</p>
                         </div>
+=======
+>>>>>>> afa3234040108db0595b58e6a58a630efad0bb33
                     </form>
                 </div>
             </div>
