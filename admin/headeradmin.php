@@ -1,6 +1,5 @@
 <?php
-$ROOTCSS_JS = "../";
-$ROOT = "../";
+
 
 include_once($ROOT."classes/User.php");
 session_start();

@@ -29,7 +29,7 @@
                         <a class="nav-link" href="<?php echo $ROOT?>index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $ROOT?>">Repas</a>
+                        <a class="nav-link" href="#repas">Repas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $ROOT?>">Contact</a>
