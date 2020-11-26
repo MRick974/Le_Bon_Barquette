@@ -46,10 +46,12 @@ $ROOTCSS_JS = './';
       Fix Le Bon Barquette : 0692 12 34 56<br>
       Email : administrateur@lebonbarquette.re<br>
     </fieldset>
+</div></br>
+<div class="container" style="font-weight:600;text-align:center;padding-bottom:30px;">
+ <span></span><p style="color:red;"> <strong>NB :</strong> la commande de repas s'effectue uniquement sur le site et par GSM,</br> l'adresse email est didié pour les soucis que vous rencontrerez sur votre compte.</p>
 </div>
-<div class="container" style="font-weight:600;text-align:center;">
- <span></span><p> <strong>NB :</strong> la commande de repas s'effectue uniquement sur le site et par GSM,</br> l'adresse email est didié pour les soucis que vous rencontrerez sur votre compte.</p>
-</div>
+<i class="fas fa-phone-alt fa-10x" style="margin-left:45%;"></i>
+
 <?php
 
 include('client/footer.php');

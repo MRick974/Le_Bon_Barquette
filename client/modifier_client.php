@@ -26,6 +26,8 @@ if (isset($_GET["id"])){
 if ($_SERVER["REQUEST_METHOD"]==="POST"){
     $user->setId($id);
     $user->setNom($_POST["nom"]);
+    $user->setPrenom($_POST["prenom"]);
+    $user->setEmail($_POST["email"]);
     $user->setRoles("ROLE_USER");
     $oldmdp=$user->getPassword();
     if(isset($_POST["password"])){
@@ -36,11 +38,12 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
         $user->setPassword($oldmdp);
     }
    
-    $requete = $db->prepare("UPDATE user SET nom =:nom, password =:password, roles =:roles WHERE id=:id");
+    $requete = $db->prepare("UPDATE user SET nom =:nom, prenom =:prenom, email =:email, password =:password, roles =:roles WHERE id=:id");
     $requete->execute(dismount($user));
     header('Location: ../admin/details_client.php');
 
 }
+
 
 ?>
 <section class="details-section">
@@ -48,11 +51,15 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
         <div class="row">
             <div class="col-md-6">
                 <div class="container">
-                    <h4>Modifier un client</h4>
+                    <h4>Modifications de <strong style="color:red;"><?php echo $user->getNom().' '.$user->getPrenom(); ?></strong> :</h4>
                     <form class="form" action="" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Nom</label>
                             <input type="text" name="nom" id="nom" class="form-control" value="<?php echo $user->getNom() ?>" placeholder="">
+                            <label for="">Prenom</label>
+                            <input type="text" name="prenom" id="prenom" class="form-control" value="<?php echo $user->getPrenom() ?>" placeholder="">
+                            <label for="">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" value="<?php echo $user->getEmail() ?>" placeholder="">
                             <label for="">Mot de passe</label>
                             <input type="password" name="password" id="password" class="form-control"  placeholder="">
                             <button type="submit" class="btn btn-primary mt-3" >Modifier</button>

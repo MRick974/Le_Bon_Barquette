@@ -22,6 +22,8 @@ include_once("headeradmin.php");
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Email</th>
                     <th>Roles</th>
                     <th>Actions</th>
                 </tr>
@@ -31,12 +33,14 @@ include_once("headeradmin.php");
                     <tr>
                         <td><?php echo $user->getId();?></td>
                         <td><?php echo $user->getNom();?></td>
+                        <td><?php echo $user->getPrenom();?></td>
+                        <td><?php echo $user->getEmail();?></td>
                         <td><?php echo $user->getRoles();?></td>
                         <td>
                             <a href="../client/modifier_client.php?id=<?php echo $user->getId();?>" class="btn btn-warning text-light">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <a href="../client/supprime_client.php?id=<?php echo $user->getId();?>" class="btn btn-danger text-light">
+                            <a href="../client/supprime_client.php?id=<?php echo $user->getId();?>" class="btn btn-danger text-light remove">
                                 <i class="fa fa-trash-alt"></i>
                             </a>
                         </td>

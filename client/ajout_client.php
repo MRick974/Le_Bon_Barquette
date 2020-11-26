@@ -11,11 +11,13 @@
         $mdpcrypt = password_hash($mdp,PASSWORD_ARGON2ID); // et on récupere le mot de passe crypter.
         $client->setId(NULL);
         $client->setNom($_POST["nom"]);
+        $client->setPrenom($_POST["prenom"]);
+        $client->setEmail($_POST["email"]);
         $client->setPassword($mdpcrypt);
         $client->setRoles("ROLE_USER");
         
-        $requete=$db->prepare("INSERT INTO user (id,nom,password,roles) 
-        values (:id,:nom,:password,:roles)");
+        $requete=$db->prepare("INSERT INTO user (id,nom,prenom,email,password,roles) 
+        values (:id,:nom,:prenom,:email,:password,:roles)");
         $requete->execute(dismount($client));
         header('Location:./');
     }
@@ -43,6 +45,12 @@
         <div class="form-group">
             <label for="">Nom</label>
             <input type="text" name="nom" id="nom" class="form-control" placeholder=""></br>
+
+            <label for="">Prenom</label>
+            <input type="text" name="prenom" id="prenom" class="form-control" placeholder=""></br>
+
+            <label for="">Email</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder=""></br>
              
             <label for="">Mot de Passe :</label>
             <input type="password" name="password" id="password"></br>

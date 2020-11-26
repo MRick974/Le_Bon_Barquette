@@ -4,6 +4,8 @@ class User
 {
     private $id;
     private $nom;
+    private $prenom;
+    private $email;
     private $password;
     private $roles;
 
@@ -33,6 +35,32 @@ class User
 
         return $this;
     }
+    
+
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
 
   
     public function getPassword()
@@ -40,7 +68,6 @@ class User
         return $this->password;
     }
 
-   
     public function setPassword($password)
     {
         $this->password = $password;
@@ -49,17 +76,16 @@ class User
     }
 
    
-
     public function getRoles()
     {
         return $this->roles;
     }
 
-   
     public function setRoles($roles)
     {
         $this->roles = $roles;
 
         return $this;
     }
+
 }
