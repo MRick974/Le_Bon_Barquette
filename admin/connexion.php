@@ -80,8 +80,129 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }*/
 ?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="icons/css/fontawesome.css" rel="stylesheet">
+    <link href="icons/css/brands.css" rel="stylesheet">
+    <link href="icons/css/solid.css" rel="stylesheet">
+</head>
+<style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+body{
+    background-color: white;
+}
+.page{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: beige;
+    border-radius: 20px;
+    padding: 10px;
+    max-width: 350px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.header h1{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.header p{
+    text-align: center;
+    margin-top: -2px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+.form{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.form input::placeholder{
+    color: rgb(172, 172, 172);
+    font-family: 'Open Sans', sans-serif;
+}
+.form input[type="text"]{
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 1em;
+    font-size: 13px;
+    outline: none;
+}
+.form input[type="password"]{
+    margin-top: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 1em;
+    font-size: 13px;
+    outline: none;
+}
 
-<form class="form" action="" method="post" enctype="multipart/form-data">
+button{
+    margin-top: 30px;
+    background-color: #000;
+    color: #fff;
+    border:none;
+    border-radius: 10px;
+    padding: 1em;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.img {
+    width: 600px;
+}
+@media screen and (max-width:640px){
+    .page{
+        margin-bottom: 10px;
+        width: 300px;
+    }
+    .eye{
+        margin-left: 250px;
+    }
+}</style>
+<body>
+    <div class="page">
+        <div class="header">
+            <a href="<?php echo $ROOT?>index.php"><img class="img" src="<?php echo $ROOT ?>img/lebonbarquette.png"></a>
+
+            <h1>Connexion</h1>
+
+            <p></p>
+        </div>
+    <form class="form" action="" method="post" enctype="multipart/form-data">
+        <div class="form">
+
+            <input type="text" name="nom" id="nom" placeholder="Nom">
+            <input type="password" name="password" id="password" placeholder="Password">
+            
+            <button type="submit">Se connecter <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
+
+        
+    </form>
+        
+
+        
+
+    </div>
+</body>
+<!--<form class="form" action="" method="post" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="">Nom</label>
@@ -90,7 +211,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="password" name="password" id="password" class="form-control" placeholder="">
         <button type="submit" class="btn btn-primary mt-3" action="">Se connecter</button>
     </div>
-</form>
+</form>-->
 <?php
 if (isset($erreur)) {
     echo '<div class="alert alert-danger" role="alert">' . $erreur . ' </div>';

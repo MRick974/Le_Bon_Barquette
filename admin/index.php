@@ -5,7 +5,6 @@ $ROOT = '../';
 include_once("./headeradmin.php");
 
 ?>
-
 <div class="container">
     <div class="row">
         <div class="col-md-7">
