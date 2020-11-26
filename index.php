@@ -17,6 +17,9 @@ $repas=$requete->fetchAll();
 
 
 ?>
+<head>
+    
+</head>
 <section class="hero-section">
     <div class="container">
         <div class="row">
@@ -53,6 +56,9 @@ $repas=$requete->fetchAll();
                                         <h4><?php echo $plats->getNom(); ?></h4>
                                     </a>
                                     <p class="price"><?php echo $plats->getPrix()."€";?></p>
+                                    <div style="padding-left:30px;position:static;">
+                                        <button class="btn-barq-primary">Commander<i class="fas fa-plus" style="margin-left:10px;"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </a>
