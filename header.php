@@ -26,9 +26,6 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $ROOT?>index.php">Accueil</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#repas">Repas</a>
                     </li>
                     <li class="nav-item">
