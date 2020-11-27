@@ -20,9 +20,6 @@
         <div class="left_area">
         <a href="<?php echo $ROOT?>"><h3>Le Bon Barquette</h3></a>
         </div>
-        <div class="left_area">
-            <h3>Formulaire d'inscription / Connexion</h3>
-        </div>
     </header>
     <div class="sidebar toggled">
         <h4>Menu</h4>

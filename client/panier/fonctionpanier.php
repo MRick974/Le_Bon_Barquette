@@ -10,8 +10,26 @@ if (isset($_GET["id"])){
         $reqajout->bindParam(":nom",$nom);
         $reqajout->setFetchMode(PDO::FETCH_CLASS, 'Plats');
         $reqajout->execute();
-        $ajout = $reqajout->fetch();
-        var_dump($ajout);
+        $ajout = $reqajout->fetchAll();
+        die(var_dump($ajout));
+        ajouter($ajout->getNom(),1, $ajout->getPrix());
 }
 
+function ajouter($libelleProduit,$qteProduit,$prixProduit) {
+    if(!isset($_SESSION['panier']))
+    {
+     
+        $_SESSION['panier'] = array(); 
+        $_SESSION['panier']['libelleProduit'] = array();
+        $_SESSION['panier']['qteProduit'] = array();
+        $_SESSION['panier']['prixProduit'] = array();
+    }
+    else{
+        array_push($_SESSION['panier']['libelleProduit'],$libelleProduit);
+        array_push($_SESSION['panier']['qteProduit'],$qteProduit);
+        array_push($_SESSION['panier']['prixProduit'],$prixProduit);
+    
+    }   
+}
+die(var_dump($_SESSION['panier']));
 ?>
