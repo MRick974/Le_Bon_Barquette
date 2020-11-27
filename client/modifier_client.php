@@ -28,9 +28,10 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"){
     $user->setNom($_POST["nom"]);
     $user->setPrenom($_POST["prenom"]);
     $user->setEmail($_POST["email"]);
-    $user->setRoles("ROLE_USER");
+    $oldrole = $user->getRoles();
+    $user->setRoles($oldrole);
     $oldmdp=$user->getPassword();
-    if(isset($_POST["password"])){
+    if(!empty($_POST["password"])){
         $mdp = $_POST['password'];
         $mdpcrypt = password_hash($mdp,PASSWORD_ARGON2ID); // et on récupere le mot de passe crypter.
         $user->setPassword($mdpcrypt);
