@@ -1,4 +1,12 @@
-<?php /*
+<?php
+$ROOTCSS_JS = '../../';
+$ROOT = '../../';
+include_once($ROOT."classes/Panier.php");
+include_once($ROOT."classes/Plats.php");
+session_start();
+$panier = $_SESSION['panier'];
+var_dump($panier);
+ /*
 
 include("../classes/Panier.php");
 $db =new PDO("mysql:host=127.0.0.1:3306;dbname=lebonbarquette","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
@@ -25,43 +33,31 @@ array_push($_SESSION['panier']['prixProduit'],$select['prixProduit']);
 
  Affichons maintenant le contenu du panier : 
 */
-$ROOTCSS_JS = '../../';
-$ROOT = '../../';
 
-include_once($ROOT.'classes/Plats.php');
+
+
 include_once($ROOT."client/header.php");
-include_once($ROOT."classes/Panier.php");
-include_once("fonctionpanier.php");
-session_start();
+
 ?>
 
 
 <div class="liste-plats">
-    <h1>Liste des plats</h1>
+    <h1>Votre commande</h1>
     <div class="table-responsive">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>Miniature</th>
-                    <th>Nom</th>
+                    <th>Libellé</th>
                     <th>Prix</th>
-                    <th>Actions</th>
+                    <th>Quantité</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($ajout as $plat) { ?>
+                <?php foreach ($panier as $produit) { ?>
                     <tr>
-                        <td><img src="<?php echo $ROOT."img/".$plat->getPhoto();?>" width="50" alt=""></td>
-                        <td><?php echo $plat->getNom();?></td>
-                        <td><?php echo $plat->getPrix();?> €</td>
-                        <td>
-                            <a href="<?php echo $ROOT?>fonctionpanier.php?id=<?php echo $plat->getId();?>" class="btn btn-primary">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                            <a href="fonctionpanier.php?id=<?php echo $plat->getId();?>" class="btn btn-danger text-light">
-                                <i class="fa fa-trash-alt"></i>
-                            </a>
-                        </td>
+                        <td><?php echo $produit->getLibelle();?></td>
+                        <td><?php echo $produit->getPrix();?> €</td>
+                        <td><?php echo $produit->getQteproduit();?></td>
                     </tr>
                 <?php
                 }

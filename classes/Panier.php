@@ -1,69 +1,30 @@
 <?php
+include_once("Plats.php");
 
 class Panier
 {
-    private $id;
-    private $libelle;
-    private $prix;
+    private $produit;
     private $qteproduit;
 
+   
+   
 
     /**
-     * Get the value of id
+     * Get the value of produit
      */ 
-    public function getId()
+    public function getProduit()
     {
-        return $this->id;
+        return $this->produit;
     }
 
     /**
-     * Set the value of id
+     * Set the value of produit
      *
      * @return  self
      */ 
-    public function setId($id)
+    public function setProduit(Plats $produit)
     {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of libelle
-     */ 
-    public function getLibelle()
-    {
-        return $this->libelle;
-    }
-
-    /**
-     * Set the value of libelle
-     *
-     * @return  self
-     */ 
-    public function setLibelle($libelle)
-    {
-        $this->libelle = $libelle;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of prix
-     */ 
-    public function getPrix()
-    {
-        return $this->prix;
-    }
-
-    /**
-     * Set the value of prix
-     *
-     * @return  self
-     */ 
-    public function setPrix($prix)
-    {
-        $this->prix = $prix;
+        $this->produit = $produit;
 
         return $this;
     }

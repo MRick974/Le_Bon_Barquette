@@ -1,5 +1,10 @@
 <?php
-
+//var_dump($_SESSION);
+session_start();
+$ROOTCSS_JS = '../../';
+$ROOT = '../../';
+include_once($ROOT."classes/Plats.php");
+include_once($ROOT."classes/Panier.php");
 $db =new PDO("mysql:host=127.0.0.1:3306;dbname=lebonbarquette","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -10,26 +15,33 @@ if (isset($_GET["id"])){
         $reqajout->bindParam(":nom",$nom);
         $reqajout->setFetchMode(PDO::FETCH_CLASS, 'Plats');
         $reqajout->execute();
-        $ajout = $reqajout->fetchAll();
-        die(var_dump($ajout));
-        ajouter($ajout->getNom(),1, $ajout->getPrix());
+        $ajout = $reqajout->fetch();
+        
+        if (isset($_GET['action'])){
+            switch ($_GET['action']){
+                case "ajouter": 
+                    ajouter($_POST['qte'],$ajout);
+                    header('location: monpanier.php');
+            };
+
+        };
+        
 }
 
-function ajouter($libelleProduit,$qteProduit,$prixProduit) {
-    if(!isset($_SESSION['panier']))
-    {
-     
-        $_SESSION['panier'] = array(); 
-        $_SESSION['panier']['libelleProduit'] = array();
-        $_SESSION['panier']['qteProduit'] = array();
-        $_SESSION['panier']['prixProduit'] = array();
+function ajouter($qteProduit,$plat) {
+    $panier= new Panier();
+    $panier->setProduit($plat)
+           ->setQteproduit($qteProduit) ;
+    if(isset($_SESSION['panier'])) {
+         array_push($_SESSION['panier'],$panier); 
     }
-    else{
-        array_push($_SESSION['panier']['libelleProduit'],$libelleProduit);
-        array_push($_SESSION['panier']['qteProduit'],$qteProduit);
-        array_push($_SESSION['panier']['prixProduit'],$prixProduit);
+     else {
+         $_SESSION['panier']= [];
+         array_push($_SESSION['panier'],$panier); 
+     }
     
-    }   
+    
+        
 }
-die(var_dump($_SESSION['panier']));
+
 ?>
