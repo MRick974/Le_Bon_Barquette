@@ -38,6 +38,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $ROOT?>client/index.php">Inscription/Connexion</a>
                     </li>
+                    <li>
+                    <a href="<?php echo $ROOT?>admin/logout.php" ><button class="btn btn-danger">Déconnexion</button></a>
+                    </li>
                 </ul>
             </div>
         </div>
