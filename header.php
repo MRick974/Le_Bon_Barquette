@@ -1,7 +1,3 @@
-<?php 
-//die(var_dump($_SESSION));
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -39,6 +35,7 @@
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <?php 
+                    @ $user = $_SESSION["user"];
                         if(isset($user)){
 
                             if($user->getRoles()==='ROLE_ADMIN'){
@@ -48,14 +45,17 @@
                             }
                         }
                     ?>
-                    
 
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $ROOT?>client/index.php">Inscription/Connexion</a>
                     </li>
-                    <li>
-                    <a href="<?php echo $ROOT?>admin/logout.php" ><button class="btn btn-secondary">Déconnexion</button></a>
-                    </li>
+                    <?php if(isset($user)){
+                                            echo '<li>
+                                            <a href="admin/logout.php"><button
+                                                    class="btn btn-secondary">Déconnexion</button></a>
+                                        </li>';
+                    } ?>
+
                 </ul>
             </div>
         </div>
