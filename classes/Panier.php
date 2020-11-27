@@ -1,35 +1,33 @@
 <?php
- 
+include_once("Plats.php");
+
 class Panier
 {
-    private $id;
+    private $produit;
     private $qteproduit;
- 
-    public function __construct() {
-        $_SESSION['panier'] = array();
-    }
- 
-    public function afficher ()
-    {
-        echo 'Le caddie contient : <br />';
-        foreach ($this->articles as $id => $qteproduit) {
-            echo (
-                $id .
-                ' quantite :' .
-                $qteproduit
-            );
-        }
-    }
- 
- 
+
+   
+   
+
     /**
-     * Get the value of id
+     * Get the value of produit
      */ 
-    public function getId()
+    public function getProduit()
     {
-        return $this->id;
+        return $this->produit;
     }
 
+    /**
+     * Set the value of produit
+     *
+     * @return  self
+     */ 
+    public function setProduit(Plats $produit)
+    {
+        $this->produit = $produit;
+
+        return $this;
+    }
 
     /**
      * Get the value of qteproduit
@@ -38,14 +36,16 @@ class Panier
     {
         return $this->qteproduit;
     }
-    
-    public function getNbArticles()
-    {
-        return count($_SESSION['panier']);
-    }
- 
-    public function ajouter(Plats $id, $qteproduit) {
-        $_SESSION['panier'][$id->getId()] += (int)$qteproduit;
-    }
 
+    /**
+     * Set the value of qteproduit
+     *
+     * @return  self
+     */ 
+    public function setQteproduit($qteproduit)
+    {
+        $this->qteproduit = $qteproduit;
+
+        return $this;
+    }
 }

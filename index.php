@@ -18,8 +18,9 @@ $repas=$requete->fetchAll();
 
 
 ?>
+
 <head>
-    
+
 </head>
 <section class="hero-section">
     <div class="container">
@@ -46,20 +47,25 @@ $repas=$requete->fetchAll();
             <div class="container">
                 <div class="row">
                     <?php foreach($repas as $plats){ ?>
-                    <div class="col-md-3 mb-3"> 
+                    <div class="col-md-3 mb-3">
                         <a href="admin/plat/details.php?id=<?php echo $plats->getId(); ?>">
                             <div class="barq-card">
                                 <div class="barq-card-img">
                                     <img src="img/logo.png" class="img-fluid" alt="">
                                 </div>
                                 <div class="barq-card-body">
-                                    <a href="admin/plat/details.php?id=<?php echo $plats->getId(); ?>" class="barq-link">
+                                    <a href="admin/plat/details.php?id=<?php echo $plats->getId(); ?>"
+                                        class="barq-link">
                                         <h4><?php echo $plats->getNom(); ?></h4>
                                     </a>
                                     <p class="price"><?php echo $plats->getPrix()."€";?></p>
                                     <div style="padding-left:30px;position:static;">
-                                    <a href="client/panier/monpanier.php?id=<?php echo $plats->getId(); ?>" class="barq-link">
-                                        <button class="btn-barq-primary">Commander<i class="fas fa-plus" style="margin-left:10px;"></i></button>
+                                        <form method="POST"
+                                            action="client/panier/fonctionpanier.php?action=ajouter&id=<?php echo $plats->getId(); ?>">
+                                            <input type="number" name="qte" min="1">
+                                            <button class="btn-barq-primary">Commander<i class="fas fa-plus"
+                                                    style="margin-left:10px;"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
