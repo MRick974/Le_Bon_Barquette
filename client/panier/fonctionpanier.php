@@ -1,5 +1,4 @@
 <?php
-
 $db =new PDO("mysql:host=127.0.0.1:3306;dbname=lebonbarquette","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -11,8 +10,8 @@ if (isset($_GET["id"])){
         $reqajout->setFetchMode(PDO::FETCH_CLASS, 'Plats');
         $reqajout->execute();
         $ajout = $reqajout->fetchAll();
-        die(var_dump($ajout));
-        ajouter($ajout->getNom(),1, $ajout->getPrix());
+        var_dump($ajout);
+        ajouter($ajout['->getNom()'],1, $ajout->getPrix());
 }
 
 function ajouter($libelleProduit,$qteProduit,$prixProduit) {
@@ -25,9 +24,7 @@ function ajouter($libelleProduit,$qteProduit,$prixProduit) {
         $_SESSION['panier']['prixProduit'] = array();
     }
     else{
-        array_push($_SESSION['panier']['libelleProduit'],$libelleProduit);
-        array_push($_SESSION['panier']['qteProduit'],$qteProduit);
-        array_push($_SESSION['panier']['prixProduit'],$prixProduit);
+        $ajout->ajouter($_GET["id"], 2);
     
     }   
 }
