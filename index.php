@@ -58,7 +58,7 @@ $repas=$requete->fetchAll();
                                     </a>
                                     <p class="price"><?php echo $plats->getPrix()."€";?></p>
                                     <div style="padding-left:30px;position:static;">
-                                        <button class="btn-barq-primary">Commander<i class="fas fa-plus" style="margin-left:10px;"></i></button>
+                                        <button class="btn-barq-primary" action="fonctionpanier.php">Commander<i class="fas fa-plus" style="margin-left:10px;"></i></button>
                                     </div>
                                 </div>
                             </div>
