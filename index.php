@@ -1,8 +1,9 @@
 <?php 
 $ROOT = './';
+include_once($ROOT."classes/User.php");
+session_start();
 include_once('header.php');
 include_once('classes/Plats.php');
-session_start();
 $db =new PDO("mysql:host=127.0.0.1;dbname=lebonbarquette","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
 
 $requete=$db->prepare("select * from plats");
